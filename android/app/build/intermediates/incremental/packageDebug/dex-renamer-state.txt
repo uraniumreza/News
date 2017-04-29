@@ -1,0 +1,4 @@
+#Sat Apr 29 12:30:25 BDT 2017
+base.0=/home/nayeem/Nayeem /React Native Projects/News/android/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main
+renamed.0=classes.dex
+file.0=/home/nayeem/Nayeem /React Native Projects/News/android/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main/classes.dex
