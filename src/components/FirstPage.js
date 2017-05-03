@@ -2,8 +2,6 @@ import React, {Component} from 'react';
 import {ListView, Text, View, Button, ScrollView, Image} from 'react-native';
 import Header from './Header';
 import SecondPage from './SecondPage';
-import Dummy from './Dummy'
-import axios from 'axios';
 import Card from './Card';
 import CardSection from './CardSection';
 import CardSectionBottom from './CardSectionBottom';
