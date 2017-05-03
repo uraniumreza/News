@@ -1,23 +1,30 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {ScrollView, View, TouchableHighlight} from 'react-native';
 import { Container, Content, Button, Icon, Text } from 'native-base';
 import IconMI from 'react-native-vector-icons/MaterialIcons';
-import Header from './Header'
-import SingleNews from './SingleNews'
+import Header from './Header';
+import SingleNews from './SingleNews';
+import { StackNavigator } from 'react-navigation';
 
-const SecondPage = () => {
-  return(
-
-    <Container>
-      <Header headerText={'NEWS'} />
-      <ScrollView style={{flex: 1}}>  
-        <SingleNews />
-      </ScrollView>
-      <Button style={styles.addButton}>
-          <IconMI name='mode-comment' size={35} color="#FFFFFF" />
-      </Button>
-    </Container>
-  );
+class SecondPage extends Component {
+  static navigationOptions = {
+    title: 'SecondPage',
+    header: null,
+  };
+  render() {
+    //const { navigate } = this.props.navigation;
+    return(
+      <Container>
+        <Header headerText={'NEWS'} />
+        <ScrollView style={{flex: 1}}>
+          <SingleNews />
+        </ScrollView>
+        <Button style={styles.addButton}>
+            <IconMI name='mode-comment' size={28} color="#FFFFFF" />
+        </Button>
+      </Container>
+    );
+  }
 };
 
 const styles = {
@@ -25,9 +32,9 @@ const styles = {
     backgroundColor: 'blue',
     borderColor: 'blue',
     borderWidth: 1,
-    height: 70,
-    width: 70,
-    borderRadius: 50,
+    height: 60,
+    width: 60,
+    borderRadius: 30,
     alignItems: 'center',
     justifyContent: 'center',
     position: 'absolute',

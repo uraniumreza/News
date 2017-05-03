@@ -1,7 +1,9 @@
 import React from 'react'
 import {View} from 'react-native'
+import {StackNavigator} from 'react-navigation';
 
-const CardSection = (props) => {
+const CardSectionMiddle = (props) => {
+  //const { navigate } = this.props.navigation;
   return (
     <View style={styles.containerStyle}>
       {props.children}
@@ -11,7 +13,7 @@ const CardSection = (props) => {
 
 const styles = {
   containerStyle: {
-    height: 120,
+    height: 119,
     backgroundColor: '#fff',
     justifyContent: 'flex-start',
     flexDirection: 'row',
@@ -23,4 +25,4 @@ const styles = {
   }
 };
 
-export default CardSection;
+export default CardSectionMiddle;

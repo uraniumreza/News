@@ -1,7 +1,7 @@
 import React from 'react'
 import {View} from 'react-native'
 
-const CardSection = (props) => {
+const CardSectionMiddleStretch = (props) => {
   return (
     <View style={styles.containerStyle}>
       {props.children}
@@ -22,4 +22,4 @@ const styles = {
   }
 };
 
-export default CardSection;
+export default CardSectionMiddleStretch;
