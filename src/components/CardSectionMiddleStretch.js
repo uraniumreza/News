@@ -11,6 +11,7 @@ const CardSectionMiddleStretch = (props) => {
 
 const styles = {
   containerStyle: {
+    height: 420,
     backgroundColor: '#fff',
     justifyContent: 'flex-start',
     flexDirection: 'row',

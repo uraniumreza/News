@@ -12,15 +12,15 @@ const CardSectionBottom = (props) => {
 const styles = {
   containerStyle: {
     height: 45,
-    flex: 1,
-    width: null,
     padding: 20,
     backgroundColor: '#dcdcdc',
     alignItems: 'center',
     flexDirection: 'row',
     borderColor: '#ddd',
-    position: 'relative'
   }
 };
+
+// flex: 1,
+// width: null,
 
 export default CardSectionBottom;
