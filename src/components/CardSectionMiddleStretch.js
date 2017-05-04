@@ -1,19 +1,18 @@
 import React from 'react'
-import {View} from 'react-native'
+import {ScrollView} from 'react-native'
 
 const CardSectionMiddleStretch = (props) => {
   return (
-    <View style={styles.containerStyle}>
+    <ScrollView style={styles.containerStyle}>
       {props.children}
-    </View>
+    </ScrollView>
   );
 };
 
 const styles = {
   containerStyle: {
-    height: 420,
+    height: 413,
     backgroundColor: '#fff',
-    justifyContent: 'flex-start',
     flexDirection: 'row',
     borderColor: '#ddd',
     marginLeft: 20,

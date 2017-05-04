@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {ListView, Text, View, Button, ScrollView, Image} from 'react-native';
+import {ListView, Text, View, Button, ScrollView, Image, TouchableHighlight} from 'react-native';
 import Header from './Header';
 import SecondPage from './SecondPage';
 import Card from './Card';
@@ -8,21 +8,20 @@ import CardSectionBottom from './CardSectionBottom';
 import CardSectionMiddle from './CardSectionMiddle';
 import Meteor, { createContainer, MeteorListView } from 'react-native-meteor';
 import moment from 'moment';
-import { StackNavigator } from 'react-navigation';
+import Spinner from 'react-native-loading-spinner-overlay';
 
 Meteor.connect('ws://durbintest.pro/websocket');
 
 class FirstPage extends Component {
   static navigationOptions = {
-    title: 'FirstPage',
-    header: null,
+    title: 'NEWS',
   };
+
 
   constructor() {
     super();
 
     this.state = {
-      dataSource: [],
     };
   }
 
@@ -36,7 +35,9 @@ class FirstPage extends Component {
         console.log(obj);
         var time = moment(obj.createdAt).format("lll");
         collection2[index] =
-          <Card key={index}>
+        <TouchableHighlight key={index} onPress={() => navigate('SecondPage', { title: obj.title, description: obj.description, time: obj.createdAt })}>
+          <View>
+          <Card>
             <CardSection>
               <View style={styles.thumbnailContainerStyle}>
                 <Image
@@ -65,7 +66,7 @@ class FirstPage extends Component {
             </CardSection>
 
             <CardSectionMiddle>
-              <Text style={{color: '#000'}} title= 'SecondPage'onPress={() => navigate('Second', { title: obj.title, description: obj.description, time: obj.createdAt })} title= 'SecondPage' >{obj.description}</Text>
+              <Text style={{color: '#000'}} >{obj.description}</Text>
             </CardSectionMiddle>
 
             <CardSectionBottom>
@@ -76,6 +77,8 @@ class FirstPage extends Component {
                 <Text style={{marginLeft: 8, fontSize: 12, color: '#000'}}>{'53 Comments'}</Text>
             </CardSectionBottom>
           </Card>
+          </View>
+        </TouchableHighlight>
       });
 
     }
@@ -85,7 +88,7 @@ class FirstPage extends Component {
     //console.log(this.state.dataSource);
     return(
       <View style={{flex: 1}}>
-
+        {!NewsReady && <Spinner visible={true} textContent={"Loading..."} textStyle={{color: 'blue'}} />}
         <Header headerText={'NEWS'} />
         <ScrollView>
           {collection2}
@@ -94,6 +97,7 @@ class FirstPage extends Component {
     );
   }
 };
+
 const styles = {
   headerContentStyle: {
     justifyContent: 'center',

@@ -13,6 +13,7 @@ const CardSectionMiddle = (props) => {
 
 const styles = {
   containerStyle: {
+    height: 115,
     backgroundColor: '#fff',
     justifyContent: 'flex-start',
     flexDirection: 'row',

@@ -1,12 +1,28 @@
 import React, { Component } from 'react';
-import {AppRegistry, Text} from 'react-native';
+import {AppRegistry, Text, View} from 'react-native';
 import FirstPage from './src/components/FirstPage';
 import SecondPage from './src/components/SecondPage';
 import { StackNavigator } from 'react-navigation';
 
+class HomeScreen extends Component {
+  static navigationOptions = {
+    header: null,
+  };
+
+  render(){
+    const { navigate } = this.props.navigation;
+    return(
+      <View style={{ flex: 1 }}>
+        <Text onPress={() => navigate('FirstPage')}>Assignment-a</Text>
+      </View>
+    );
+  }
+}
+
 const News = StackNavigator({
-  First: { screen: FirstPage },
-  Second: { screen: SecondPage },
+  HomeScreen: { screen: HomeScreen },
+  FirstPage: { screen: FirstPage },
+  SecondPage: { screen: SecondPage },
 });
 
 

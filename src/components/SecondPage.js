@@ -4,15 +4,13 @@ import { Container, Content, Button, Icon, Text, Fab } from 'native-base';
 import IconMI from 'react-native-vector-icons/MaterialIcons';
 import Header from './Header';
 import moment from 'moment';
-import Card from './Card'
-import CardSection from './CardSection'
-import CardSectionBottom from './CardSectionBottom'
-import CardSectionMiddleStretch from './CardSectionMiddleStretch'
-import { StackNavigator } from 'react-navigation';
+import Card from './Card';
+import CardSection from './CardSection';
+import CardSectionBottom from './CardSectionBottom';
+import CardSectionMiddleStretch from './CardSectionMiddleStretch';
 
 class SecondPage extends Component {
   static navigationOptions = {
-    title: 'SecondPage',
     header: null,
   };
 
@@ -24,10 +22,6 @@ class SecondPage extends Component {
     };
   }
 
-  static navigationOptions = {
-    title: 'SecondPage',
-    header: null,
-  };
   render() {
     const { params } = this.props.navigation.state;
     var time = moment(params.time).format("lll");
