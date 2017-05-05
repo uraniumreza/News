@@ -57,7 +57,7 @@ class SecondPage extends Component {
            </CardSection>
 
            <CardSectionMiddleStretch>
-             <Text style={{color: '#000'}} title= 'SecondPage'onPress={() => navigate('Second', { title: obj.title, description: obj.description, time: obj.createdAt })} title= 'SecondPage' >{params.description}</Text>
+             <Text style={{color: '#000'}}>{params.description}</Text>
            </CardSectionMiddleStretch>
 
            <CardSectionBottom>

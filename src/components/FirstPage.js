@@ -14,7 +14,7 @@ Meteor.connect('ws://durbintest.pro/websocket');
 
 class FirstPage extends Component {
   static navigationOptions = {
-    title: 'NEWS',
+    header: null,
   };
 
 
@@ -31,52 +31,50 @@ class FirstPage extends Component {
     if(NewsReady){
       collection2 = [];
       NewsList.map(function (obj, index) {
-        console.log("-----//---------");
-        console.log(obj);
         var time = moment(obj.createdAt).format("lll");
         collection2[index] =
         <TouchableHighlight key={index} onPress={() => navigate('SecondPage', { title: obj.title, description: obj.description, time: obj.createdAt })}>
-          <View>
-          <Card>
-            <CardSection>
-              <View style={styles.thumbnailContainerStyle}>
-                <Image
-                  style = {styles.thumbnailStyle}
-                  source = {{uri: "http://showboxappdownloads.com/wp-content/uploads/2017/01/news-icon-13.png"}}
-                />
-              </View>
-              <View style={styles.headerContentStyle}>
-                <View>
-                  <Text style={styles.headerTextStyle}>{obj.title}</Text>
+          <View >
+            <Card>
+              <CardSection>
+                <View style={styles.thumbnailContainerStyle}>
+                  <Image
+                    style = {styles.thumbnailStyle}
+                    source = {{uri: "http://showboxappdownloads.com/wp-content/uploads/2017/01/news-icon-13.png"}}
+                  />
                 </View>
-                <View style={styles.headerTextStyleBottom1}>
+                <View style={styles.headerContentStyle}>
+                  <View>
+                    <Text style={styles.headerTextStyle}>{obj.title}</Text>
+                  </View>
                   <View style={styles.headerTextStyleBottom1}>
-                    <Image
-                      style = {{height: 12, width:12}}
-                      source = {{uri: 'https://cdn0.iconfinder.com/data/icons/feather/96/clock-128.png'}}
-                    />
-                    <Text style={{fontSize: 13, padding: 3, color: '#000'}}>{time}</Text>
-                  </View>
-                  <View style={styles.headerTextStyleBottom2}>
-                    <Image style={{height: 14, width:14}} source={{uri: 'https://maxcdn.icons8.com/Share/icon/Messaging//attach1600.png'}} />
-                    <Text style={{fontSize: 13, color: '#000'}}>{'2 attachments'}</Text>
+                    <View style={styles.headerTextStyleBottom1}>
+                      <Image
+                        style = {{height: 12, width:12}}
+                        source = {{uri: 'https://cdn0.iconfinder.com/data/icons/feather/96/clock-128.png'}}
+                      />
+                      <Text style={{fontSize: 13, padding: 3, color: '#000'}}>{time}</Text>
+                    </View>
+                    <View style={styles.headerTextStyleBottom2}>
+                      <Image style={{height: 14, width:14}} source={{uri: 'https://maxcdn.icons8.com/Share/icon/Messaging//attach1600.png'}} />
+                      <Text style={{fontSize: 13, color: '#000'}}>{'2 attachments'}</Text>
+                    </View>
                   </View>
                 </View>
-              </View>
-            </CardSection>
+              </CardSection>
 
-            <CardSectionMiddle>
-              <Text style={{color: '#000'}} >{obj.description}</Text>
-            </CardSectionMiddle>
+              <CardSectionMiddle>
+                <Text style={{color: '#000'}} >{obj.description}</Text>
+              </CardSectionMiddle>
 
-            <CardSectionBottom>
-                <Image
-                  style = {{height: 22, width:22}}
-                  source = {{uri: 'http://www.iconsdb.com/icons/preview/black/speech-bubble-2-xxl.png'}}
-                />
-                <Text style={{marginLeft: 8, fontSize: 12, color: '#000'}}>{'53 Comments'}</Text>
-            </CardSectionBottom>
-          </Card>
+              <CardSectionBottom>
+                  <Image
+                    style = {{height: 22, width:22}}
+                    source = {{uri: 'http://www.iconsdb.com/icons/preview/black/speech-bubble-2-xxl.png'}}
+                  />
+                  <Text style={{marginLeft: 8, fontSize: 12, color: '#000'}}>{'53 Comments'}</Text>
+              </CardSectionBottom>
+            </Card>
           </View>
         </TouchableHighlight>
       });
@@ -126,12 +124,6 @@ const styles = {
   thumbnailStyle: {
     height: 85,
     width: 85,
-  },
-
-  coverPhotoStyle: {
-    height: 350,
-    flex: 1,
-    width: null,
   },
 
   thumbnailContainerStyle: {
